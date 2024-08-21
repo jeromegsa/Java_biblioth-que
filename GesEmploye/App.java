@@ -20,5 +20,14 @@ public class App {
         e.setSalaire(s);
         bdd.add(e);
         System.out.println(bdd);
+       
+            for(Employe i:bdd){
+                System.out.println("Voici la liste des employe");
+                System.out.println(i.getNom());
+                System.out.println(i.getPoste());
+                System.out.println(i.getSalaire());
+            }
+        }
     }
-}
+
+

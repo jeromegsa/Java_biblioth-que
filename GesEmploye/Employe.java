@@ -44,6 +44,11 @@ public class Employe {
             this.poste = poste;
         }
     
+        // public void afficherEmploye( e){
+        //     for(Employe i:e){
+        //         System.out.println(i.getSalaire());
+        //     }
+        // }
         
     }
     

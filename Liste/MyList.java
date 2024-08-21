@@ -1,7 +1,5 @@
 
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
 import java.util.Scanner;
 import java.util.HashSet;
 import java.util.Set;
@@ -24,13 +22,10 @@ public class MyList {
 
     // Exo 2
     public static void evenNombre(int[] tab) {
-
-        int[] x = new int[tab.length];
         for (int i = 0; i < tab.length; i++) {
             if (tab[i] % 2 != 0)
                 continue;
             System.out.println(tab[i]);
-
         }
     }
 
@@ -55,6 +50,7 @@ public class MyList {
 
         int index = Arrays.binarySearch(tab, nbr);
         System.out.println("Lélément recherché se trouve à la position: " + index);
+        scanner.close();
     }
 
     // Exo 5

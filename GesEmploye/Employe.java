@@ -4,7 +4,7 @@ import java.util.Scanner;
 public class Employe {
     static  Scanner scanner = new Scanner(System.in);
 
-    int ID = 0;
+    long ID = 0;
     int salaire = 0;
     String nom = "xxxxxx", poste = "";
     static ArrayList<Employe> bdd = new ArrayList<Employe>(50);
@@ -16,11 +16,11 @@ public class Employe {
     // this.salaire = sal;
     // }
 
-    public int getID() {
+    public long getID() {
         return ID;
     }
 
-    public void setID(int id) {
+    public void setID(long id) {
         this.ID = id;
     }
 
@@ -49,8 +49,9 @@ public class Employe {
     }
 
     public static void displayAll(ArrayList<Employe> e) {
-        System.out.println("Voici la liste des employe");
+        System.out.println("Voici la liste des employes");
         for (Employe i : e) {
+            System.out.println("ID: " + i.getID());
             System.out.println("Nom: " + i.getNom());
             System.out.println("Prenom: " + i.getPoste());
             System.out.println("Salaire: " + i.getSalaire());
@@ -61,17 +62,16 @@ public class Employe {
 
     public static void displayOne() {
         System.out.println("Quel est l'identifiant de l'utilisateur à afficher");
-        Scanner scanner = new Scanner(System.in);
-        int index = scanner.nextInt();
+        int id = scanner.nextInt();
         for (Employe i : bdd) {
-            if (index == i.ID) {
+            if (id == i.ID) {
                 System.out.println("ID :" + i.getID());
                 System.out.println("Nom :" + i.getNom());
                 System.out.println("Poste :" + i.getPoste());
                 System.out.println("Salaire :" + i.getSalaire());
             }
         }
-
+        // scanner.close();
     }
 
     public static void update() {
@@ -96,10 +96,11 @@ public class Employe {
     }
 
     public static void registerEmploye() {
+        long id=0;
         System.out.println("Combien d'employé voulez-vous enregistrer?");
         int n = scanner.nextInt();
-        int id = 0;
         for (int i = 0; i < n; i++) {
+            id++;
             System.out.println("Enregistrer employé n°" + (i + 1));
             Employe e = new Employe();
             scanner.nextLine();
@@ -111,7 +112,7 @@ public class Employe {
             int s = scanner.nextInt();
 
             // Je modifie les propriétés de mon objet avec les valeurs entrées par le user
-            e.setID(id++);
+            e.setID(id);
             e.setNom(nom);
             e.setPoste(poste);
             e.setSalaire(s);
